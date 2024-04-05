@@ -1,0 +1,7 @@
+---
+- op: replace
+  path: /spec/ports
+  value:
+    - name: http
+      port: 8700
+      targetPort: 8700

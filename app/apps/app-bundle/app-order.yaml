@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-order-apps
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: apps
+    name: in-cluster
+  project: root-project-apps
+  source:
+    path: overlays/order
+    repoURL: https://github.com/jdellostritto/k8s-platform-apps-stunning
+    targetRevision: HEAD
+    
